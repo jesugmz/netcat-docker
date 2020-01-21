@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [[ "$SOURCE_BRANCH" == "master" ]]; then
+  echo "---> Building images"
+  make build
+else
+  echo "---> The branch name $SOURCE_BRANCH was not recognized, exiting..."
+  exit 1
+fi

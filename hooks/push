@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ "$SOURCE_BRANCH" == "master" ]; then
+  echo "---> Pushing images"
+  # hooks are relative to the Dockerfile path
+  make push
+else
+  echo "---> The branch name $SOURCE_BRANCH was not recognized, exiting..."
+  exit 1
+fi
