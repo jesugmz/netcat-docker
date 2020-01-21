@@ -42,3 +42,10 @@ Package under development.
 -   netcat-traditional `docker run -it --rm jesugmz/nc-traditional -h`
 
 -   ncat `docker run -it --rm jesugmz/ncat -h`
+
+To use Netcat in the [host network](https://docs.docker.com/network/network-tutorial-host/) include `--network host` in your Docker run command as follow (being 192.168.10.20 the host IP):
+
+```sh
+$ docker run -it --rm --network host jesugmz/nc -zv 192.168.10.20 80
+Connection to 192.168.10.20 80 port [tcp/*] succeeded!
+```
